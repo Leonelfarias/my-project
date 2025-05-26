@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nombre": "Taladro Inalámbrico",
+    "precio": 89.99,
+    "stock": 25,
+    "imagen": "imagenes/taladro.jpg",
+    "categoria": "Herramientas eléctricas",
+    "marca": "Black+Decker",
+    "descripcion": "Taladro inalámbrico de 20V ideal para perforar madera y metal."
+  },
+  {
+    "id": 2,
+    "nombre": "Caja de Herramientas",
+    "precio": 45.5,
+    "stock": 40,
+    "imagen": "imagenes/caja_herramientas.jpg",
+    "categoria": "Kits de herramientas",
+    "marca": "Stanley",
+    "descripcion": "Set completo de herramientas manuales para uso doméstico y profesional."
+  },
+  {
+    "id": 3,
+    "nombre": "Destornillador Eléctrico",
+    "precio": 29.99,
+    "stock": 60,
+    "imagen": "imagenes/destornillador.jpg",
+    "categoria": "Herramientas eléctricas",
+    "marca": "Bosch",
+    "descripcion": "Compacto y práctico, ideal para atornillar muebles y tareas livianas."
+  },
+  {
+    "id": 4,
+    "nombre": "Llave Inglesa",
+    "precio": 13.75,
+    "stock": 100,
+    "imagen": "imagenes/llave_inglesa.jpg",
+    "categoria": "Herramientas manuales",
+    "marca": "Tramontina",
+    "descripcion": "Llave resistente de acero forjado con mango antideslizante."
+  },
+  {
+    "id": 5,
+    "nombre": "Sierra Circular",
+    "precio": 119.0,
+    "stock": 15,
+    "imagen": "imagenes/sierra.jpg",
+    "categoria": "Herramientas eléctricas",
+    "marca": "Makita",
+    "descripcion": "Sierra de alta potencia para cortes precisos en madera."
+  },
+  {
+    "id": 6,
+    "nombre": "Pistola de Calor",
+    "precio": 39.9,
+    "stock": 30,
+    "imagen": "imagenes/pistola_calor.jpg",
+    "categoria": "Herramientas especiales",
+    "marca": "Einhell",
+    "descripcion": "Pistola de aire caliente ideal para remover pintura o soldar plásticos."
+  },
+  {
+    "id": 7,
+    "nombre": "Alicate Universal",
+    "precio": 9.99,
+    "stock": 150,
+    "imagen": "imagenes/alicate.jpg",
+    "categoria": "Herramientas manuales",
+    "marca": "Irwin",
+    "descripcion": "Alicate resistente con diseño ergonómico para mejor agarre."
+  },
+  {
+    "id": 8,
+    "nombre": "Cinta Métrica",
+    "precio": 4.5,
+    "stock": 200,
+    "imagen": "imagenes/cinta.jpg",
+    "categoria": "Medición",
+    "marca": "Stanley",
+    "descripcion": "Cinta métrica duradera con freno automático y gancho magnético."
+  },
+  {
+    "id": 9,
+    "nombre": "Nivel Láser",
+    "precio": 69.0,
+    "stock": 20,
+    "imagen": "imagenes/nivel.jpg",
+    "categoria": "Medición",
+    "marca": "Bosch",
+    "descripcion": "Nivel láser de alta precisión con trípode y funda de transporte."
+  },
+  {
+    "id": 10,
+    "nombre": "Compresor Portátil",
+    "precio": 99.99,
+    "stock": 10,
+    "imagen": "imagenes/compresor.jpg",
+    "categoria": "Herramientas neumáticas",
+    "marca": "Michelin",
+    "descripcion": "Compresor versátil para inflar neumáticos y utilizar herramientas de aire."
+  }
+]
