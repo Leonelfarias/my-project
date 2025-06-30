@@ -2,26 +2,43 @@
   {
     "id": 1,
     "email": "ana@example.com",
-    "password": "ana123"
+    "password": "ana123",
+    "role": "cliente"
   },
   {
     "id": 2,
     "email": "bruno@example.com",
-    "password": "bruno456"
+    "password": "bruno456",
+    "role": "cliente"
   },
   {
     "id": 3,
     "email": "carla@example.com",
-    "password": "carla789"
+    "password": "carla789",
+    "role": "cliente"
   },
   {
     "id": 4,
     "email": "daniel@example.com",
-    "password": "daniel321"
+    "password": "daniel321",
+    "role": "cliente"
   },
   {
     "id": 5,
     "email": "elena@example.com",
-    "password": "elena654"
+    "password": "elena654",
+    "role": "cliente"
+  },
+  {
+    "id": 6,
+    "email": "admin@example.com",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "id": 7,
+    "email": "client@example.com",
+    "password": "cliente123",
+    "role": "cliente"
   }
 ]

@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
+import React , {useState, useContext}from 'react'
 import './styleProductos.css'
+import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
-const Productos = ({producto, agregarCarrito}) => {
+const Productos = ({producto}) => {
 
-const [cantidad, setCantidad] = useState(1);
+  const {handleAddToCart } = useContext(CartContext)
+  const [cantidad, setCantidad] = useState(producto.cantidad);
 
   const increase = () => setCantidad(prev => (prev < producto.stock ? prev + 1 : prev));
   const decrease = () => setCantidad(prev => (prev > 1 ? prev - 1 : 1));
@@ -27,8 +30,12 @@ const [cantidad, setCantidad] = useState(1);
               <button className='qtyButton' onClick={increase}>+</button>
           </div>
 
-          <button onClick={() => agregarCarrito({ ...producto, cantidad })}>Agregar al carrito</button>
+          <button style={{display: cantidad == 0 ? 'none' : 'block'}} onClick={()=> handleAddToCart({...producto, cantidad:cantidad})}>Agregar al carrito</button>
+
+          <Link to={`/productos/${producto.id}`}>Ver más</Link>
       </section>
+      
+      
   )
 }
 

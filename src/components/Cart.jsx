@@ -1,66 +1,78 @@
-import React from 'react'
-import './styleCart.css'
+import React, { useContext } from 'react';
+import './styleCart.css';
+import { CartContext } from '../context/CartContext';
 
-const Cart = ({ cartItems, isOpen, onClose, borrarProducto, vaciarCarrito }) => {
+const Cart = ({ isOpen, onClose }) => {
+  const { cart, handleDeleteFromCart, clearCart, updateQuantity, finalizarCompra } = useContext(CartContext);
 
-    return (
-        <div className={`cart ${isOpen ? 'open' : ''}`}> {/* open si esta abierto el carrito */}
-            <div className='cart-header'><h2>Carrito de compras</h2>
-                <button onClick={onClose}>X</button>
+  return (
+    <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
+      <div className='cart-header'>
+        <h2>Carrito de Compras</h2>
+        <button onClick={onClose} className='close-button'>X</button>
+      </div>
+      <div className='cart-content'>
+        {cart.length === 0 ? (
+          <p className="empty-cart-message">El carrito está vacío</p>
+        ) : (
+          <>
+            <ul className='cart-items-list'>
+              {cart.map((item) => (
+                <li key={item.id} className="cart-item">
+                  <div className="item-info">
+                    <span className="item-name">{item.nombre}</span>
+                    <span className="item-price">${item.precio} c/u</span>
+                  </div>
+
+                  <div className="quantity-controls">
+                    <button
+                      onClick={() => updateQuantity(item, item.cantidad - 1)}
+                      className="quantity-btn"
+                    >
+                      -
+                    </button>
+                    <span className="item-quantity">{item.cantidad}</span>
+                    <button
+                      onClick={() => updateQuantity(item, item.cantidad + 1)}
+                      className="quantity-btn"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div className="item-subtotal">
+                    ${(item.precio * item.cantidad).toFixed(2)}
+                  </div>
+
+                  <button
+                    onClick={() => handleDeleteFromCart(item)}
+                    className="delete-btn"
+                    aria-label={`Eliminar ${item.nombre} del carrito`}
+                  >
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <div className='cart-footer'>
+              <p className="cart-total">
+                Total: ${cart.reduce((total, item) => total + (item.precio * item.cantidad), 0).toFixed(2)}
+              </p>
+              <div className="cart-actions">
+                <button onClick={clearCart} className="btn-clear">
+                  Vaciar Carrito
+                </button>
+                <button onClick={finalizarCompra} className="btn-checkout">
+                  Finalizar Compra
+                </button>
+              </div>
             </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
 
-            <div>
-                {cartItems.length === 0 ? (
-                    <p style={{ color: 'red' }}>El carrito está vacío</p>
-                ) : (
-                    <>
-                        <table className="cart-table">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio unitario</th>
-                                    <th>Precio total</th>
-                                    <th>Eliminar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {cartItems.map((item) => (
-                                    <tr key={item.id}>
-                                        <td>{item.nombre}</td>
-                                        <td className="center">{item.cantidad}</td>
-                                        <td className="center">${item.precio.toFixed(2)}</td>
-                                        <td className="center">${(item.precio * item.cantidad).toFixed(2)}</td>
-                                        <td className="center">
-                                            <button className="delete-button" onClick={() => borrarProducto(item)}>
-                                                <i className="fa-solid fa-trash"></i> 
-                                            </button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-
-                        {cartItems.length > 0 && (
-                            <div className="cart-total">
-                                Total final: $
-                                {cartItems.reduce((total, item) => total + item.precio * item.cantidad, 0).toFixed(2)}
-                            </div>
-                        )}
-
-                            <div className="cart-actions">
-                                <button className="clear-cart-button" onClick={vaciarCarrito}>
-                                    Vaciar carrito 🗑️
-                                </button>
-                            </div>
-
-                    </>
-
-                )}
-            </div>
-
-        </div>
-    )
-}
-
-export default Cart
+export default Cart;
