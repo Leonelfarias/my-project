@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
     setUserData(null);
     localStorage.removeItem('isAuth');
     localStorage.removeItem('userData');
-    navigate('/login');
+    navigate('/');
   };
 
   return (
